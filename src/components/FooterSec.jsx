@@ -5,8 +5,8 @@ import {gallerys} from "../constants";
 const FooterSec = () => {
   return (
     <div className="footer-area ">
-      <div className="footer-main lg:flex justify-center">
-        <div className="footer md:p-10 p-2">
+      <div className="footer-main lg:flex justify-center ">
+        <div className="footer md:p-10 p-3">
           <div className="">
             <a href="/" className="mb-5 block">
               <img src={logoMain} alt="logoMain" />
@@ -22,7 +22,7 @@ const FooterSec = () => {
           <div>
             <h2 className="subtitle Yeseva ">Gallery</h2>
             <div>
-              <ul className="flex gap-3 flex-row mt-14 flex-wrap ista">
+              <ul className="flex sm:gap-3 gap-2 flex-row mt-14 flex-wrap ista mb-6">
                 {gallerys.map(gallery =>
                   <li key={gallery.id}>
                     <a href="/">
@@ -39,9 +39,9 @@ const FooterSec = () => {
           </div>
           <div>
             <h2 className="subtitle Yeseva ">Quick Links</h2>
-            <div className="flex mt-14 gap-10">
-              <div className="col-6 col-sm-6 col-md-6 pr-sm-5">
-                <ul className="nav-menu nav">
+            <div className="flex mt-14 gap-10 ">
+              <div >
+                <ul className="nav-menu md:text-[17px] text-[15px]">
                   <li>
                     <a href="">About Us</a>
                   </li>
@@ -62,8 +62,8 @@ const FooterSec = () => {
                   </li>
                 </ul>
               </div>
-              <div className="col-6 col-sm-6 col-md-6 pl-sm-5">
-                <ul className="nav-menu nav align-right">
+              <div >
+                <ul className="nav-menu md:text-[17px] text-[15px]">
                   <li>
                     <a href="">Become Volunteer</a>
                   </li>

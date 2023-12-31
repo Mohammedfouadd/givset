@@ -52,24 +52,24 @@ export const navLinks = [
     title: "Home"
   },
   {
-    id: "about",
+    id: "/about",
     title: "About Us"
   },
   {
-    id: "causes",
+    id: "/causes",
     title: "Causes"
   },
   {
-    id: "blog",
+    id: "/blog",
     title: "Blog"
   },
   {
-    id: "pages",
+    id: "/pages",
     title: "Pages"
   },
   {
-    id: "cotact",
-    title: "Coutact Us"
+    id: "/contact",
+    title: "Contact Us"
   }
 ];
 
@@ -186,5 +186,20 @@ export const gallerys = [
   {
     id: 6,
     icon: gallerySix
+  }
+];
+
+export const blogCards = [
+  {
+    id: 'one',
+    icon: blogOne,
+  },
+  {
+    id: 'tow',
+    icon: blogTwo,
+  },
+  {
+    id: 'three',
+    icon: blogThree,
   }
 ];

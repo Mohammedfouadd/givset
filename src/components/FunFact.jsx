@@ -15,7 +15,7 @@ const FunFact = () => {
     <ScrollTrigger
       onEnter={() => setCount(true)}
       onExit={() => setCount(false)}>
-      <div className="funFact bg-[#f7f7f7] flex lg:flex-row flex-col justify-center lg:gap-6 ">
+      <div className="funFact bg-[#f7f7f7] flex lg:flex-row flex-col justify-center lg:gap-6  ">
         <div className="item flex lg:py-[140px] py-[60px] justify-center gap-5 md:px-[50px]">
           <div className="relative">
             <img src={funfactThree} alt="funfactOne" className="min-w-[66px]" />

@@ -13,13 +13,41 @@
   scroll-behavior: smooth;
   transition: .3s;
 }
+
+.container {
+    
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px 0;
+  
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
 img{
   max-width: 100%;
 }
+
 .btn-border-gradient{
   border-radius: 32.5px;
   border: 2px solid #d7d7d7;
-  padding: 10px 20px;
+  padding: 10px 10px;
 }
 @media(max-width: '765px'){
   .btn-border-gradient{
@@ -32,6 +60,9 @@ img{
  color: #FC6539;
 }
 /* NavBar */
+.nav{
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+}
 .mainBtn{
  text-align: center;
  padding: 17px 27px;
@@ -46,7 +77,6 @@ img{
 .mainBtnBlack{
   border: 2px solid ;
   text-align: center;
-  padding: 17px 27px;
   border-radius: 30px;
   font-weight: 500;
   font-size: 16px;
@@ -242,10 +272,8 @@ height: 255px;
 width: 255px;
 border-radius: 50%;
 position: absolute;
-border-top:5px solid #fff;
-border-right:5px solid #fff;
-border-bottom:5px solid #fff;
-border-left:5px solid #fff;
+
+border:10px solid #b37d7d7c;
 }
 .donate-circle-wrp .donate-content::before{
   content: "";
@@ -254,21 +282,32 @@ width: 255px;
 border-radius: 50%;
 z-index: 1;
 position: absolute;
-border-top:5px solid #fff;
-border-right:5px solid #fff;
-border-bottom:5px solid #b37d7d7c;
-border-left:5px solid #b37d7d7c;
-transition: .3s;
+border:10px solid #b37d7d7c;
+animation: heroAnimate .3s 1 .3s linear forwards;
 }
-.donate-circle-wrp .donate-content:hover::before{
-border-left:5px solid #fff;
-border-bottom:5px solid #fff;
+
+@keyframes heroAnimate {
+ 
+  0%{
+    border-top:10px solid #fff;
+  }
+  50%{
+    border-top:10px solid #fff;
+  }
+  100% {
+    border-top:10px solid #fff;
+    border-right:10px solid #fff;
+    border-bottom:10px solid #fff;
+  }
 }
+
+
+/* services */
 
 .services ul{
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 400px));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
 }
 
@@ -283,6 +322,7 @@ border-bottom:5px solid #fff;
 }
 
 /* about */
+
 .Yeseva{
   font-family: "Yeseva One", cursive;
   line-height: 1.4;
@@ -332,10 +372,15 @@ border-bottom:5px solid #fff;
 }
 
 .causes ul{
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 400px));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 350px));
   gap: 20px;
+}
+.causes ul li {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* DonateArea */
@@ -345,17 +390,7 @@ border-bottom:5px solid #fff;
   z-index: 0;
 }
 
-/* .donateArea .donate-form:before {
-  background-color: #08242a;
-  border-radius: 50%;
-  content: "";
-  height: 724px;
-  left: -512px;
-  position: absolute;
-  top: -236px;
-  width: 724px;
-  z-index: -21;
-} */
+
  .amount-info {
   display: flex;
   margin-bottom: 50px;
@@ -417,12 +452,7 @@ border-bottom:5px solid #fff;
   border: 1px solid #FC6539;
 }
 
-/* .thumb-bg-layer{
-  background-image: url('./assets/img/donate/bg-donate1.jpg');
-  width: 100%;
-  height: 340px;
-  background-repeat: no-repeat;
-} */
+
 
 /* funFact */
 .funFact .item{
@@ -454,6 +484,7 @@ border-bottom:5px solid #fff;
 opacity: 1;
 }
 .event .btn-theme {
+  
   position: absolute;
   left: 25%;
   top: 34%;
@@ -463,6 +494,95 @@ opacity: 1;
   padding: 10px 15px;
   border-radius: 30px ;
   
+}
+.wave-btn span {
+  background: #f6dec9;
+  border-radius: 50%;
+  height: 200px;
+  left: -50px;
+  position: absolute;
+  top: -50px;
+  width: 200px;
+}
+.wave-btn span:nth-child(1) {
+  background: #fc6539;
+  animation: wave-button 2s infinite 0.1s linear backwards;
+}
+.wave-btn span:nth-child(2) {
+  background: #fea444;
+  animation: wave-button 3s infinite 0.5s linear backwards;
+}
+.wave-btn span:nth-child(3) {
+  animation: wave-button 4s infinite 1s linear backwards;
+  background: #FEA444;
+  background: linear-gradient(to right, #FEA444 0%, #FC6539 100%);
+}
+
+.play-video-btn .icon {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  border-radius: 50%;
+  height: 100px;
+  line-height: 100px;
+  position: relative;
+  text-align: center;
+  width: 100px;
+  z-index: 1;
+  background: #FEA444;
+  background: linear-gradient(to right, #FEA444 0%, #FC6539 100%);
+}
+
+
+@keyframes wave-button {
+  0% {
+    opacity: 1;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.event .eventVideo{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #000000c4;
+  padding: 0 40px;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.event .eventVideo .iconVideo{
+  position: absolute;
+  top: 150px;
+  right: 30px;
+  color: white;
+  background-color: #203438;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.fancybox-iframe, .fancybox-video {
+  background: transparent;
+  border: 0;
+  display: block;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
 }
 
 /* Testimonial */
@@ -516,23 +636,43 @@ background-color: white;
   background-color: #283e42;
 }
 
+
 /* blog */
-.blog .posts{
-  margin: auto;
-  max-width: 1260px ;
+
+.blog .posts .container{
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 400px));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 350px));
   gap: 20px;
-  color: #000;
 }
 
-@media(max-widh: 786px){
-  .nav{
-    width: 300px;
-  }
+
+.blog .posts .blogCard{
+ height: 400px;
+ display: flex;
+ justify-content: center;
+ height: 500px;
 }
+.blog .posts .blogCard .smallCard{
+  position: absolute;
+  top: 60%;
+  background-color: #f7f7f7;
+    padding: 29px 34px 24px;
+    width: 320px;
+    transition: .3s;
+}
+.blog .posts .blogCard:hover .smallCard  {
+top: 30%
+ }
+
+.blog .posts .blogCard:hover img  {
+  transform: scale(1.1);
+   }
+
 
 /* brand */
+
 .brand{
   padding: 109px 0 339px;
 }
@@ -586,7 +726,6 @@ background-color: white;
 }
 .footer-area  .nav-menu li a {
   color: #001d23;
-  font-size: 17px;
   display: inline-block;
   position: relative;
 }
@@ -617,5 +756,4 @@ background-color: white;
   pointer-events: none;
   position: absolute;
 }
-
 

@@ -9,7 +9,7 @@ import {causess} from "../constants";
 
 const Causes = () => {
   return (
-    <section className="causes text-center ">
+    <section className="causes text-center  mb-14  mx-auto">
       <motion.div
         variants={textVariant()}
         className="max-w-[1000px] mx-auto text-center mb-10">
@@ -24,7 +24,7 @@ const Causes = () => {
         </div>
       </motion.div>
       <motion.div variants={textVariant()}>
-        <ul className="flex  justify-between gap-5 xl:w-[1260px] ">
+        <ul className="container justify-center md:justify-start">
           {causess.map(causes =>
             <li key={causes.id} className="bg-[#f7f7f7] mb-6">
               <img src={causes.icon} alt="icon" className="w-full" />
@@ -49,7 +49,7 @@ const Causes = () => {
                 </div>
               </div>
               <h1 className="Yeseva hover:text-[#FC6539] text-xl text-start mb-5 px-5 cursor-pointer">
-                {causes.id}
+                {causes.title}
               </h1>
               <p className="text-start text-[#777] px-5">
                 {causes.prag}
@@ -59,7 +59,7 @@ const Causes = () => {
                   <div className="w-10 mr-2 h-10 rounded-full bg-[#fff] flex justify-center items-center cursor-pointer">
                     <FontAwesomeIcon icon={faUser} className="text-[#FC6539]" />
                   </div>
-                  <h2 className=" cursor-pointer font-semibold mr-5">
+                  <h2 className=" cursor-pointer font-semibold ">
                     Kristin Horton
                   </h2>
                 </div>

@@ -1,19 +1,16 @@
 import React, {useState} from "react";
 import {motion} from "framer-motion";
-import {fadeIn, slideIn, textVariant} from "../utils/motion";
+import { slideIn, textVariant} from "../utils/motion";
 import {donateOne, donateTwo, bannerShape} from "../assets/index";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowRight, faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {SectionnoWraper} from "../hoc";
 
-
 const Testimonial = () => {
-
-  
   const [active, setActive] = useState(true);
 
   return (
-    <section className="bg-[#001d23] testimonial py-[150px] lg:flex justify-between gap-10 relative">
+    <section className="bg-[#001d23] testimonial lg:py-[150px] lg:flex justify-between gap-10 relative my-[70px]">
       <motion.div variants={slideIn("left", "tween", 0.03, 0.1)}>
         <div className="testimonialBg flex justify-center items-center mb-10">
           <div className="backorage p-10 py-[150px]">
@@ -24,7 +21,9 @@ const Testimonial = () => {
           </div>
         </div>
       </motion.div>
-      <motion.div variants={textVariant()} className="h-[510px]">
+      <motion.div
+        variants={textVariant()}
+        className="h-[510px] flex  justify-center">
         {active
           ? <div
               onClick={() => setActive(!active)}
@@ -42,7 +41,7 @@ const Testimonial = () => {
               <img
                 src={bannerShape}
                 alt="bannerShape"
-                className="mb-4 w-[150px] h-[22px]"
+                className="mb-4 w-[150px] h-[22px] text-center"
               />
               <h4 className="font-bold text-[#fff] mb-4">Harvey Harrington</h4>
               <h6 className="text-[#fc6539]">Senior Volunteer</h6>
@@ -71,7 +70,7 @@ const Testimonial = () => {
       </motion.div>
 
       <motion.div variants={slideIn("right", "tween", 0.03, 0.1)}>
-        <div className="lg:flex gap-3 hidden bg-[#192a2d] p-5 w-[500px] absolute top-[65%] right-0">
+        <div className="xl:flex gap-3 hidden bg-[#192a2d] p-5 w-[480px] absolute top-[70%] right-0">
           <div
             onClick={() => setActive(!active)}
             className="swiper-button-prev ">

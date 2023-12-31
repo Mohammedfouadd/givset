@@ -8,7 +8,7 @@ import {aboutPic, aboutPicTwo, ckeck} from "../assets";
 
 const About = () => {
   return (
-    <div className="about xl:mt-12 flex flex-col gap-10 overflow-hidden justify-center ">
+    <div className="about xl:mt-12 flex flex-col gap-10 overflow-hidden justify-center px-[15px] mb-14 ">
       <motion.div variants={textVariant()} className="max-w-[1000px] mx-auto">
         <h2 className="subtitle">About Us</h2>
         <div className="lg:text-[60px] lg:text-start text-center text-[26px] font-bold Yeseva mt-6 ">

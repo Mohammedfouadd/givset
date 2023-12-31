@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {logoMain} from "../assets";
 import {navLinks} from "../constants/index";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -9,31 +9,32 @@ import {
   faArrowRight
 } from "@fortawesome/free-solid-svg-icons";
 
-const Navbar = () => {
+const Navbar = ({setActiveAnimate, activeAnimate}) => {
   const [active, setActive] = useState("/");
   const [show, setShow] = useState(false);
 
   return (
-    <nav className="w-full md:flex items-center  fixed top-0 z-20 bg-[#fff] .nav overflow-hiddin">
+    <nav className="w-full md:flex items-center fixed top-0 z-20 bg-[#fff] nav overflow-hiddin">
       <div className="w-full   flex xl:justify-around justify-between relative p-5 items-center md:mx-auto">
-        <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+        <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
           <img src={logoMain} alt="mainlogo" className="lg:w-40 w-[120px] " />
-        </Link>
+        </NavLink>
         <ul className="list-none hidden xl:flex flex-row menu">
           {navLinks.map(nav =>
             <li
               key={nav.id}
               className={`text-[17px]  hover:text-[#e53603] text-[#001d23] font-semibold relative  items-center text-center`}>
-              <a
+              <NavLink
                 className={`${active === nav.id
                   ? "active"
                   : ""} relative text-center py-[7px] px-[31px]	`}
                 onClick={() => {
                   setActive(nav.id);
+                  setActiveAnimate(!activeAnimate);
                 }}
-                href={`#${nav.id}`}>
+                to={`${nav.id}`}>
                 {" "}{nav.title}
-              </a>
+              </NavLink>
             </li>
           )}
         </ul>
@@ -66,9 +67,14 @@ const Navbar = () => {
                 <li
                   key={nav.id}
                   className={`text-[16px] font-semibold relative pb-2 items-center text-start hover:text-[#e53603]`}>
-                  <a className="" href={`#${nav.id}`}>
+                  <NavLink className="" to={`${nav.id}`}
+                    onClick={() => {
+                      setActive(nav.id);
+                      setActiveAnimate(!activeAnimate);
+                    }}
+                  >
                     {" "}{nav.title}
-                  </a>
+                  </NavLink>
                 </li>
               )}
             </ul>

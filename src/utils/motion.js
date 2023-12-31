@@ -69,19 +69,20 @@ export const slideIn = (direction, type, delay, duration) => {
         type: type,
         delay: delay,
         duration: duration,
-        ease: "easeOut",
+        ease: 'easeIn'
+        
       },
     },
   };
 };
 
-export const staggerContainer = (staggerChildren, delayChildren) => {
+export const staggerContainer = () => {
   return {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: staggerChildren,
-        delayChildren: delayChildren || 0,
+        staggerChildren:1 ,
+        delayChildren: 1|| 0,
       },
     },
   };
